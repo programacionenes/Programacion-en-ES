@@ -1,0 +1,42 @@
+<project name="Macedonia 2D" basedir="." default="init">
+	<property name="build.dir" value="build"/>
+	<property name="src.dir" value="src"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="manifest.file" value="manifest.txt"/>
+	<property name="build.compiler" value="modern"/>
+	<property name="target.vm" value="1.7"/>
+	<property name="build.classes" value="bin"/>
+	
+	<macrodef name="build_jar">
+	    <attribute name="name"/>
+	    <sequential>
+	        <jar jarfile="${build.dir}/@{name}.jar" manifest="Capitulos/@{name}/manifest.txt">
+	        	<fileset dir="${build.classes}">
+	                <include name="/@{name}/**"/>
+	            </fileset>
+	        </jar>
+	    </sequential>
+	</macrodef>
+	
+	
+	<!-- <property name="JAVA_HOME" 		value="C:\Program Files\Java\jdk1.6.0_32\bin" /> -->
+
+	<target name="init" depends="build">
+		<echo>Creating temporary folders...</echo>
+		<mkdir dir="${build.dir}"/>
+		<antcall target="build" />
+	</target>
+	
+	<target name="clean" description="Clean up">
+		<echo>Cleaning up...</echo>
+		<delete dir="${build.dir}"/>
+	</target>
+
+
+	
+	<target name="build" description="Build project" depends="clean">
+		<echo>Building...</echo>
+
+		 <build_jar name="uno"/>
+	</target>
+</project>
