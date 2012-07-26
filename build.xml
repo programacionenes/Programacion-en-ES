@@ -20,19 +20,9 @@
 	    </sequential>
 	</macrodef>
 
-	<target name="init" depends="build">
-		<echo>Creating temporary folders...</echo>
-		<mkdir dir="${class.dir}"/>
-	</target>
-	
-	<target name="clean" description="Clean up">
-		<echo>Cleaning up...</echo>
-		<delete dir="${class.dir}"/>
-	</target>
-
 
 	
-	<target name="build" description="Build project" depends="clean">
+	<target name="build" description="Build project">
 		<echo>Building...</echo>
 		 <build_jar name="uno"/>
 	</target>
