@@ -6,6 +6,7 @@
 	<property name="build.compiler" value="modern"/>
 	<property name="target.vm" value="1.7"/>
 	<property name="build.classes" value="bin"/>
+	<property environment="env" />
 	
 	<macrodef name="build_jar">
 	    <attribute name="name"/>
