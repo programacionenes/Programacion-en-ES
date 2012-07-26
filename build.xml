@@ -1,5 +1,6 @@
 <project name="Macedonia 2D" basedir="." default="init">
 	<property name="build.dir" value="build"/>
+	<property name="class.dir" value="bin"/>
 	<property name="src.dir" value="src"/>
 	<property name="lib.dir" value="lib"/>
 	<property name="manifest.file" value="manifest.txt"/>
@@ -11,7 +12,7 @@
 	<macrodef name="build_jar">
 	    <attribute name="name"/>
 	    <sequential>
-	    	<javac srcdir="Capitulos/@{name}" destdir="bin"/>
+	    	<javac srcdir="Capitulos/@{name}" destdir="${class.dir}"/>
 	    	<echo>Creating Jarfile ${build.dir}/${env.BUILD_TAG}.jar with sources in @{name}/</echo>
 	        <jar jarfile="${build.dir}/${env.BUILD_TAG}.jar" manifest="Capitulos/@{name}/manifest.txt" basedir="Capitulos/@{name}/">
 	        </jar>
@@ -21,19 +22,18 @@
 
 	<target name="init" depends="build">
 		<echo>Creating temporary folders...</echo>
-		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${class.dir}"/>
 	</target>
 	
 	<target name="clean" description="Clean up">
 		<echo>Cleaning up...</echo>
-		<delete dir="${build.dir}"/>
+		<delete dir="${class.dir}"/>
 	</target>
 
 
 	
 	<target name="build" description="Build project" depends="clean">
 		<echo>Building...</echo>
-
 		 <build_jar name="uno"/>
 	</target>
 </project>
