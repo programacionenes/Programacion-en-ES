@@ -1,6 +1,6 @@
 <project name="Macedonia 2D" basedir="." default="init">
 	<property name="build.dir" value="build"/>
-	<property name="build" value="${env.BUILD_NUMBER}"/>
+	<property name="build" value="${env.BUILD_TAG}"/>
 	<property name="src.dir" value="src"/>
 	<property name="lib.dir" value="lib"/>
 	<property name="manifest.file" value="manifest.txt"/>
@@ -11,11 +11,8 @@
 	<macrodef name="build_jar">
 	    <attribute name="name"/>
 	    <sequential>
-	    	<echo>Creating Jarfile ${build.dir}/@{name}.jar with sources in /@{name}/**</echo>
-	        <jar jarfile="${build.dir}/@{name}.jar" manifest="Capitulos/@{name}/manifest.txt">
-	        	<fileset dir="${build.classes}">
-	                <include name="/@{name}/**"/>
-	            </fileset>
+	    	<echo>Creating Jarfile ${build.dir}/${build}.jar with sources in /@{name}/**</echo>
+	        <jar jarfile="${build.dir}/${build}.jar" manifest="Capitulos/@{name}/manifest.txt" basedir="/@{name}/**">
 	        </jar>
 	    </sequential>
 	</macrodef>
