@@ -24,7 +24,6 @@
 	<target name="init" depends="build">
 		<echo>Creating temporary folders...</echo>
 		<mkdir dir="${build.dir}"/>
-		<antcall target="build" />
 	</target>
 	
 	<target name="clean" description="Clean up">
