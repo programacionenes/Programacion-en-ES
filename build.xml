@@ -11,6 +11,7 @@
 	<macrodef name="build_jar">
 	    <attribute name="name"/>
 	    <sequential>
+	    	<echo>Creating Jarfile ${build.dir}/@{name}.jar with sources in /@{name}/**</echo>
 	        <jar jarfile="${build.dir}/@{name}.jar" manifest="Capitulos/@{name}/manifest.txt">
 	        	<fileset dir="${build.classes}">
 	                <include name="/@{name}/**"/>
