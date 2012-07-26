@@ -22,7 +22,7 @@
 
 
 	
-	<target name="build" description="Build project">
+	<target name="init" description="Build project">
 		<echo>Building...</echo>
 		 <build_jar name="uno"/>
 	</target>
