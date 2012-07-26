@@ -13,7 +13,7 @@
 	    <sequential>
 	    	<javac srcdir="Capitulos/@{name}" destdir="bin"/>
 	    	<echo>Creating Jarfile ${build.dir}/${build}.jar with sources in @{name}/</echo>
-	        <jar jarfile="${build.dir}/${build}.jar" manifest="Capitulos/@{name}/manifest.txt" basedir="@{name}/">
+	        <jar jarfile="${build.dir}/${build}.jar" manifest="Capitulos/@{name}/manifest.txt" basedir="Capitulos/@{name}/">
 	        </jar>
 	    </sequential>
 	</macrodef>
