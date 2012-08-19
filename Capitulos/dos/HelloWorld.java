@@ -1,4 +1,4 @@
-package uno;
+package dos;
 
 public class HelloWorld {
 
